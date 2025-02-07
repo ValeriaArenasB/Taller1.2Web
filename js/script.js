@@ -1,11 +1,14 @@
 // Se inicia con un carrito vacio
 let cart = [];
 
+
+//FUNCIONALIDAD 1.
+
 // Actualiza lo que aparece en el carrito cada vez que se hace un cambio
 function updateCart() {
   //Trae todos los elementos del carrito
-  const cartItemsContainer = document.querySelector(".shopping-cart .items");
-  cartItemsContainer.innerHTML = "";
+  const cartContainer = document.querySelector(".shopping-cart .items");
+  cartContainer.innerHTML = "";
 
   //Crea un div por cada elemento del carrito, trae su información y lo agrega al contenedor de items en el carrito para mostrarlo en el HTML
   cart.forEach((item) => {
@@ -18,9 +21,9 @@ function updateCart() {
                 <p class="cart-item-price">$${item.price}</p>
                 <p class="cart-item-quantity">Quantity: ${item.quantity}</p>
             </div>`;
-    cartItemsContainer.appendChild(cartItem);
+    cartContainer.appendChild(cartItem);
   });
-  console.log(cartItemsContainer);
+  console.log(cartContainer);
 
   // Recalcula el precio total cada vez que se agrega un item
   const precioTotal = cart.reduce(
@@ -63,13 +66,13 @@ function emptyCart() {
 document.querySelectorAll(".add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
     //Busca el elemento padre del botón que es el contenedor del juego
-    const gameElement = button.closest(".games");
+    const gameAttribute = button.closest(".games");
     //Crea un objeto con la información del juego y extrae toda su info. de los atributos "data-" del HTML
     const item = {
-      id: gameElement.dataset.id,
-      name: gameElement.dataset.name,
-      price: parseFloat(gameElement.dataset.price),
-      image: gameElement.dataset.image,
+      id: gameAttribute.dataset.id,
+      name: gameAttribute.dataset.name,
+      price: parseFloat(gameAttribute.dataset.price),
+      image: gameAttribute.dataset.image,
     };
     addToCart(item);
   });
@@ -80,7 +83,60 @@ document.querySelector(".empty-cart").addEventListener("click", emptyCart);
 
 
 
+//FUNCIONALIDAD 2.
+
+// Event listener para el formulario de agregar un nuevo juego al presionar el boton tipo submit
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  //Obtiene la información ingresada del formulario
+  const name = document.getElementById("name").value;
+  const price = parseFloat(document.getElementById("price").value);
+  const image = document.getElementById("image").value;
+  const genre = document.getElementById("genre").value;
+  const year = document.getElementById("year").value;
+  const publisher = document.getElementById("publisher").value;
+
+  // Validación del precio del juego
+  if (price < 1000) {
+    alert("El precio debe ser mayor o igual a 1000.");
+    return;
+  }
+
+  // Crea un nuevo juego con la información ingresada y lo agrega al HTML con la misma estructura que los juegos ya existentes
+  // Se le asigna un nuevo id al juego con respecto a la cantidad de juegos ya existentes con .length + 1
+  const newId = document.querySelectorAll(".games").length + 1;
+  const newGame = `
+    <div class="games" data-id="${newId}" data-name="${name}" data-price="${price}" data-image="${image}">
+      <img src="${image}" alt="${name}" />
+      <h3>${name}</h3>
+      <div class="attributes">
+        <p><strong>Precio:</strong> $${price}</p>
+        <p><strong>Género:</strong> ${genre}</p>
+        <p><strong>Año de Publicación:</strong> ${year}</p>
+        <p><strong>Publicador:</strong> ${publisher}</p>
+      </div>
+      <button class="add-to-cart">Agregar al Carrito</button>
+    </div>
+  `;
+
+  // Agrega el nuevo juego al HTML a la sección con la clase "shop-content" con insertAdjacentHTML al final
+  document.querySelector(".shop-content").insertAdjacentHTML("beforeend", newGame);
 
 
+  // Event listener para el botón "Add to Cart" del nuevo juego. No se llama en una funcion al event listener anterior porque el juego no existía al momento de cargar la página
+  // tambien para no recorrer todos los juegos cada vez que se agrega uno nuevo
+  document.querySelector(`.games[data-id="${newId}"] .add-to-cart`).addEventListener("click", function () {
+      const gameAttribute = this.closest(".games");
+      const item = {
+        id: gameAttribute.dataset.id,
+        name: gameElemgameAttributeent.dataset.name,
+        price: parseFloat(gameAttribute.dataset.price),
+        image: gameAttribute.dataset.image,
+      };
+      addToCart(item);
+    });
 
-
+  // Resetea el formulario después de presionar el botón de submit, después de agregar un nuevo juego exitosamente 
+  document.getElementById("form").reset();
+});
