@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>GameVault</title>
+  </head>
+  <body>
+    <!-- Header con el título, logo y carrito -->
+    <header class="menu">
+      <div class="menu-content">
+        <div class="logo">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/686/686589.png"
+            class="logo-img" />
+          <h1>GameVault</h1>
+        </div>
+
+        <div class="cart">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/833/833314.png"
+            alt="Shopping Img"
+            class="cart-img" />
+            
+          <!-- Shopping Cart-->
+          <div class="shopping-cart">
+            <div class="items">
+                <!-- los items se agregaran segun el js -->
+            </div>
+
+            <div class="cart-footer">
+              <div class="total">Total: $<span>0</span></div>
+              <button class="empty-cart">Vaciar Carrito</button>
+            </div>
+          </div>
+        </div>
+      </div> <!-- no se si esto cuente como divs excesivos jaja -->
+    </header>
+
+    <!-- Introducción a la tienda -->
+    <section class="intro">
+      <h2>Welcome to GameVault</h2>
+      <p>
+        Discover a world of gaming excellence at GameVault. We offer a carefully
+        curated selection of the best video games at competitive prices. Whether
+        you're a casual gamer or a hardcore enthusiast, we have something for
+        everyone!
+      </p>
+    </section>
+
+    <!-- Sección de juegos disponibles -->
+    <section class="shop">
+      <h2>Juegos Disponibles</h2>
+      <!-- Template de las tarjetas de juegos -->
+      <div class="shop-content">
+        <div class="games" data-id="1" data-name="Minecraft" data-price="80000" data-image="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png">
+          <img
+            src="https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png"
+            alt="Minecraft" />
+          <h3>Minecraft</h3>
+          <div class="attributes">
+            <p><strong>Precio:</strong> $80,000</p>
+            <!-- se agregaron los atributos género, año y publicador -->
+            <p><strong>Género:</strong> Sandbox</p>
+            <p><strong>Año de Publicación:</strong> 2011</p>
+            <p><strong>Publicador:</strong> Mojang</p>
+          </div>
+           <button class="add-to-cart">Agregar al Carrito</button>
+          </div>
+
+        <!-- varios atributos "data-" para identificar los elementos del juego y agregarlos al carrito -->
+        <div class="games" data-id="2" data-name="Stardew Valley" data-price="25000" data-image="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/capsule_616x353.jpg?t=1711128146">
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/capsule_616x353.jpg?t=1711128146"
+            alt="Stardew Valley" />
+          <h3>Stardew Valley</h3>
+          <div class="attributes">
+            <p><strong>Precio:</strong> $25,000</p>
+            <p><strong>Género:</strong> Simulación</p>
+            <p><strong>Año de Publicación:</strong> 2016</p>
+            <p><strong>Publicador:</strong> ConcernedApe</p>
+          </div>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de agregar juegos -->
+    <section class="add-game">
+      <h2>Add New Game</h2>
+      <!-- Formulario para agregar un nuevo juego -->
+      <form id="form">
+        <div class="form-content">
+          <label for="name">Nombre:</label>
+          <input type="text" id="=name" required />
+        </div>
+
+        <div class="form-content">
+          <label for="price">Precio:</label>
+          <input type="number" id="price" step="10000" required />
+        </div>
+
+        <div class="form-content">
+          <label for="image">URL de imagen:</label>
+          <input type="url" id="image" required />
+        </div>
+
+        <div class="form-content">
+          <label for="genre">Género:</label>
+          <input type="text" id="genre" required />
+        </div>
+
+        <div class="form-content">
+          <label for="year">Año de Publicación:</label>
+          <input type="text" id="year" required />
+        </div>
+
+        <div class="form-content">
+          <label for="publisher">Publicador:</label>
+          <input type="text" id="publisher" required />
+        </div>
+
+        <button type="submit" class="submit">Agregar Juego</button>
+      </form>
+    </section>
+
+
+    <script type="module" src="../js/script.js"></script>
+  </body>
+</html>
