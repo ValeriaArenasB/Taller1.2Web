@@ -8,18 +8,20 @@
   </head>
   <body>
     <!-- Header con el título, logo y carrito -->
-    <header class="menu">
+    <header>
+      <!-- el menu de navegación tiene una clase aparte por el css -->
       <div class="menu-content">
         <div class="logo">
           <img
-            src="https://cdn-icons-png.flaticon.com/512/686/686589.png"
+            src="https://cdn-icons-png.flaticon.com/512/1816/1816034.png"
+            alt="Logo Img"
             class="logo-img" />
           <h1>GameVault</h1>
         </div>
 
         <div class="cart">
           <img
-            src="https://cdn-icons-png.flaticon.com/512/833/833314.png"
+            src="https://cdn-icons-png.flaticon.com/512/2649/2649351.png"
             alt="Shopping Img"
             class="cart-img" />
 
@@ -28,7 +30,7 @@
             <div class="items">
               <!-- los items se agregaran segun el js -->
             </div>
-
+            <!-- el 'footer' tiene la información del total y el botón para vaciar el carrito-->
             <div class="cart-footer">
               <div class="total">Total: $<span>0</span></div>
               <button class="empty-cart">Vaciar Carrito</button>
@@ -91,6 +93,44 @@
             <p><strong>Género:</strong> Simulación</p>
             <p><strong>Año de Publicación:</strong> 2016</p>
             <p><strong>Publicador:</strong> ConcernedApe</p>
+          </div>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+
+        <div
+          class="games"
+          data-id="3"
+          data-name="Diablo II: Resurrected"
+          data-price="180000"
+          data-image="https://image.api.playstation.com/vulcan/ap/rnd/202105/3117/9dbHmg4NNVdSKxyuVDU9N7kz.png">
+          <img
+            src="https://image.api.playstation.com/vulcan/ap/rnd/202105/3117/9dbHmg4NNVdSKxyuVDU9N7kz.png"
+            alt="Diablo II: Resurrected" />
+          <h3>Diablo II: Resurrected</h3>
+          <div class="attributes">
+            <p><strong>Precio:</strong> $120,000</p>
+            <p><strong>Género:</strong> ARPG</p>
+            <p><strong>Año de Publicación:</strong> 2021</p>
+            <p><strong>Publicador:</strong> Blizzard Entertainment</p>
+          </div>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+
+        <div
+          class="games"
+          data-id="4"
+          data-name="Animal Crossing"
+          data-price="150000"
+          data-image="https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000027619/9989957eae3a6b545194c42fec2071675c34aadacd65e6b33fdfe7b3b6a86c3a">
+          <img
+            src="https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000027619/9989957eae3a6b545194c42fec2071675c34aadacd65e6b33fdfe7b3b6a86c3a"
+            alt="Animal Crossing" />
+          <h3>Animal Crossing</h3>
+          <div class="attributes">
+            <p><strong>Precio:</strong> $150,000</p>
+            <p><strong>Género:</strong> Sandbox</p>
+            <p><strong>Año de Publicación:</strong> 2020</p>
+            <p><strong>Publicador:</strong> Nintendo</p>
           </div>
           <button class="add-to-cart">Agregar al Carrito</button>
         </div>

@@ -19,7 +19,7 @@ function updateCart() {
             <div class="cart-item-details">
                 <p class="cart-item-name">${item.name}</p>
                 <p class="cart-item-price">$${item.price}</p>
-                <p class="cart-item-quantity">Quantity: ${item.quantity}</p>
+                <p class="cart-item-quantity">Cantidad: ${item.quantity}</p>
             </div>`;
     cartContainer.appendChild(cartItem);
   });
@@ -130,7 +130,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
       const gameAttribute = this.closest(".games");
       const item = {
         id: gameAttribute.dataset.id,
-        name: gameElemgameAttributeent.dataset.name,
+        name: gameAttribute.dataset.name,
         price: parseFloat(gameAttribute.dataset.price),
         image: gameAttribute.dataset.image,
       };

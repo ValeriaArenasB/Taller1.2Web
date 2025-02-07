@@ -8,14 +8,14 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #cee3f9;
 }
 
-/* Header Styles */
-.menu {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1rem;
+/* Header */
+header {
+    background-color: #65a3e1;
+    color:#003162;
+    padding: 0.8rem;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -25,8 +25,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* para que el carro de compras quede al lado derecho*/
 }
 
 .logo {
@@ -46,11 +45,11 @@ body {
 }
 
 .cart-img {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
 }
 
-/* Cart Dropdown Styles */
+/* Carrito */
 .shopping-cart {
     display: none;
     position: absolute;
@@ -101,19 +100,15 @@ body {
     color: #2c3e50;
 }
 
-.cart-item-price {
-    color: #7f8c8d;
-}
-
-.cart-item-quantity {
+.cart-item-price, .cart-item-quantity {
     color: #7f8c8d;
     font-size: 0.9rem;
 }
 
-.cart-footer {
+
+.cart-footer { /* separado del carrito para agregar un separador y cambiar las orientaciones */
     margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,35 +116,35 @@ body {
 
 .total {
     font-weight: bold;
-    color: #2c3e50;
+    color: #1c2834;
 }
 
 .empty-cart {
-    background-color: #e74c3c;
+    background-color: #df4040;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .empty-cart:hover {
-    background-color: #c0392b;
+    background-color: #c33d2f;
 }
 
-/* Introduction Section */
+/* Sección de presentación */
 .intro {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: white;
+    background-color: #df4949;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
+    color: white;
 }
 
-/* Shop Section */
+/* Juegos Disponibles */
 .shop {
     max-width: 1200px;
     margin: 2rem auto;
@@ -158,9 +153,10 @@ body {
 
 .shop-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* como flexbox, pero con grids de tamaño minimo y maximo dinamico */
     gap: 2rem;
     margin-top: 2rem;
+
 }
 
 .games {
@@ -168,7 +164,7 @@ body {
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    
 }
 
 .games:hover {
@@ -179,39 +175,41 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .games h3 {
     margin: 1rem 0;
     color: #2c3e50;
+    font-size: 1.2rem;
 }
 
-.attributes {
-    margin-bottom: 1rem;
-}
 
 .attributes p {
-    margin: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
     font-size: 0.9rem;
 }
 
 .add-to-cart {
     width: 100%;
+    margin: 0 auto;
+    display: block;
     padding: 0.8rem;
-    background-color: #2ecc71;
+    background-color: #239e56;
     color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .add-to-cart:hover {
-    background-color: #27ae60;
+    background-color: #29c168;
 }
 
-/* Add Game Section */
+/* Formulario para agregar juegos */
 .add-game {
     max-width: 600px;
     margin: 2rem auto;
@@ -227,33 +225,37 @@ body {
 
 .form-content label {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
+    margin-bottom: 0.4rem;
+    color: #184f86;
+    margin-top: 1.5rem;
 }
 
 .form-content input {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #ddd;
+    border: 1px solid #b5b2b2;
     border-radius: 4px;
 }
 
 .submit {
-    width: 100%;
+    width: 40%;
+    margin: 0 auto;
+    display: block;
     padding: 1rem;
-    background-color: #3498db;
+    background-color: #29c168;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: larger;
+    font-weight: bold;
 }
 
 .submit:hover {
-    background-color: #2980b9;
+    background-color: #4be38a;
 }
 
-/* Responsive Design */
+/* Responsivo de acuerdo al tamaño de la pantalla */
 @media (max-width: 768px) {
     .shop-content {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
