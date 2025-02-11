@@ -8,13 +8,14 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #cee3f9;
+    background-color: #f9cef9;
 }
 
 /* Header */
 header {
-    background-color: #65a3e1;
-    color:#003162;
+    background-color: #e992c6;
+    color:#72055b;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 0.8rem;
     position: sticky;
     top: 0;
@@ -97,7 +98,7 @@ header {
 
 .cart-item-name {
     font-weight: bold;
-    color: #2c3e50;
+    color: #2c3150;
 }
 
 .cart-item-price, .cart-item-quantity {
@@ -116,11 +117,11 @@ header {
 
 .total {
     font-weight: bold;
-    color: #1c2834;
+    color: #341c2c;
 }
 
 .empty-cart {
-    background-color: #df4040;
+    background-color: #df4082;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -129,7 +130,7 @@ header {
 }
 
 .empty-cart:hover {
-    background-color: #c33d2f;
+    background-color: #c32f72; /*este color no me convence */
 }
 
 /* Sección de presentación */
@@ -137,11 +138,12 @@ header {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: #df4949;
+    background-color: #ce448b;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
     color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 /* Juegos Disponibles */
@@ -196,7 +198,7 @@ header {
     margin: 0 auto;
     display: block;
     padding: 0.8rem;
-    background-color: #239e56;
+    background-color: #cd4e96;
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
@@ -206,7 +208,7 @@ header {
 }
 
 .add-to-cart:hover {
-    background-color: #29c168;
+    background-color: #eb80b5;
 }
 
 /* Formulario para agregar juegos */
@@ -226,7 +228,7 @@ header {
 .form-content label {
     display: block;
     margin-bottom: 0.4rem;
-    color: #184f86;
+    color: #86187f;
     margin-top: 1.5rem;
 }
 
@@ -242,7 +244,7 @@ header {
     margin: 0 auto;
     display: block;
     padding: 1rem;
-    background-color: #29c168;
+    background-color: #c12963;
     color: white;
     border: none;
     border-radius: 6px;
@@ -252,7 +254,7 @@ header {
 }
 
 .submit:hover {
-    background-color: #4be38a;
+    background-color: #e34b8a;
 }
 
 /* Responsivo de acuerdo al tamaño de la pantalla */
