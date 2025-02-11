@@ -10,7 +10,7 @@
     <!-- Header con el título, logo y carrito -->
     <header>
       <!-- el menu de navegación tiene una clase aparte por el css -->
-      <div class="menu-content">
+      <nav class="menu-content">
         <div class="logo">
           <img
             src="https://cdn-icons-png.flaticon.com/512/1816/1816034.png"
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </nav>
       <!-- no se si esto cuente como divs excesivos jaja -->
     </header>
 
@@ -53,8 +53,8 @@
     <section class="shop">
       <h2>Juegos Disponibles</h2>
       <!-- Template de las tarjetas de juegos -->
-      <div class="shop-content">
-        <div
+      <div class="shop-content"> <!-- el unico objetivo de este div es para el css, por lo que no lo deje como article; en cambio, los article son para cada tarjeta de juego-->
+        <article
           class="games"
           data-id="1"
           data-name="Minecraft"
@@ -72,10 +72,10 @@
             <p><strong>Publicador:</strong> Mojang</p>
           </div>
           <button class="add-to-cart">Agregar al Carrito</button>
-        </div>
+        </article>
 
         <!-- varios atributos "data-" para identificar los elementos del juego y agregarlos al carrito -->
-        <div
+        <article
           class="games"
           data-id="2"
           data-name="Stardew Valley"
@@ -92,13 +92,13 @@
             <p><strong>Publicador:</strong> ConcernedApe</p>
           </div>
           <button class="add-to-cart">Agregar al Carrito</button>
-        </div>
+        </article>
 
-        <div
+        <article
           class="games"
           data-id="3"
           data-name="Diablo II: Resurrected"
-          data-price="180000"
+          data-price="120000"
           data-image="https://image.api.playstation.com/vulcan/ap/rnd/202105/3117/9dbHmg4NNVdSKxyuVDU9N7kz.png">
           <img
             src="https://image.api.playstation.com/vulcan/ap/rnd/202105/3117/9dbHmg4NNVdSKxyuVDU9N7kz.png"
@@ -111,9 +111,9 @@
             <p><strong>Publicador:</strong> Blizzard Entertainment</p>
           </div>
           <button class="add-to-cart">Agregar al Carrito</button>
-        </div>
+        </article>
 
-        <div
+        <article
           class="games"
           data-id="4"
           data-name="Animal Crossing"
@@ -130,8 +130,8 @@
             <p><strong>Publicador:</strong> Nintendo</p>
           </div>
           <button class="add-to-cart">Agregar al Carrito</button>
-        </div>
-      </div>
+        </article>
+      </article>
     </section>
 
     <!-- Sección de agregar juegos -->

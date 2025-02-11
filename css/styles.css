@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Generales que aplican para todo */
 * {
     margin: 0;
     padding: 0;
@@ -107,7 +107,7 @@ header {
 }
 
 
-.cart-footer { /* separado del carrito para agregar un separador y cambiar las orientaciones */
+.cart-footer { /* separado del carrito para agregar un separador y cambiar las orientaciones. pero no tiene tag semántico footer porque no es un footer de verdad */
     margin-top: 1rem;
     padding-top: 0.5rem;
     display: flex;
@@ -133,7 +133,7 @@ header {
     background-color: #c32f72; /*este color no me convence */
 }
 
-/* Sección de presentación */
+/* Sección de presentación de la página*/
 .intro {
     max-width: 800px;
     margin: 2rem auto;
@@ -161,7 +161,7 @@ header {
 
 }
 
-.games {
+.games { /* tarjeticas de cada juego*/
     background-color: white;
     border-radius: 8px;
     padding: 1rem;
